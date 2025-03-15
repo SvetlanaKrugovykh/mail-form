@@ -55,12 +55,16 @@ const Form = () => {
     }, [from, to, subject, content, tg]);
 
     useEffect(() => {
-        // Fetch from and to lists from Telegram bot
-        tg.onEvent("fetchEmailLists", (data) => {
-            setFromList(data.fromList);
-            setToList(data.toList);
-        });
-    }, [tg]);
+        const urlParams = new URLSearchParams(window.location.search);
+        const fromListParam = urlParams.get('fromList');
+        const toListParam = urlParams.get('toList');
+        if (fromListParam) {
+            setFromList(JSON.parse(decodeURIComponent(fromListParam)));
+        }
+        if (toListParam) {
+            setToList(JSON.parse(decodeURIComponent(toListParam)));
+        }
+    }, []);
 
     const onChangeFrom = (e) => {
         setFrom(e.target.value);
