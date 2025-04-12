@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/mail-form/static/css/main.64c31a7d.css",
+    "main.js": "/mail-form/static/js/main.1a35f8fd.js",
+    "static/media/SFProDisplay-Semibold.woff": "/mail-form/static/media/SFProDisplay-Semibold.340c3a1a6dddb0b99476.woff",
+    "static/media/SFProDisplay-Medium.woff": "/mail-form/static/media/SFProDisplay-Medium.7274e74c05adf47dbcd9.woff",
+    "static/media/SFProDisplay-Bold.woff": "/mail-form/static/media/SFProDisplay-Bold.5b08afd6b167d7ec48ce.woff",
+    "static/media/SFProDisplay-Regular.woff": "/mail-form/static/media/SFProDisplay-Regular.7ee14c637e39445d7093.woff",
+    "static/media/SFProDisplay-Semibold.woff2": "/mail-form/static/media/SFProDisplay-Semibold.3926eb65ce4420a81930.woff2",
+    "static/media/SFProDisplay-Medium.woff2": "/mail-form/static/media/SFProDisplay-Medium.22a99d36f90cc52d2914.woff2",
+    "static/media/SFProDisplay-Bold.woff2": "/mail-form/static/media/SFProDisplay-Bold.84c242fe1f30a86d5ab3.woff2",
+    "static/media/SFProDisplay-Regular.woff2": "/mail-form/static/media/SFProDisplay-Regular.d5ff9f6824d2c6607361.woff2",
+    "index.html": "/mail-form/index.html",
+    "main.64c31a7d.css.map": "/mail-form/static/css/main.64c31a7d.css.map",
+    "main.1a35f8fd.js.map": "/mail-form/static/js/main.1a35f8fd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.64c31a7d.css",
+    "static/js/main.1a35f8fd.js"
+  ]
+}
