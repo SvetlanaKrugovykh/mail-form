@@ -17,6 +17,11 @@ const Form = () => {
         return re.test(String(email).toLowerCase());
     };
 
+    const validateEmails = (emails) => {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emails.split(",").map(email => email.trim()).every(email => re.test(email));
+    };
+
     const onSendData = useCallback(() => {
         const data = {
             from,
@@ -46,7 +51,7 @@ const Form = () => {
 
     useEffect(() => {
         if (tg && tg.MainButton) {
-            if (!from || !to || !subject || !content || !validateEmail(from) || !validateEmail(to)) {
+            if (!from || !to || !subject || !content || !validateEmail(from) || !validateEmails(to)) {
                 tg.MainButton.hide();
             } else {
                 tg.MainButton.show();
@@ -75,10 +80,11 @@ const Form = () => {
     };
 
     const onChangeTo = (e) => {
-        setTo(e.target.value);
+        const value = e.target.value;
+        setTo(value);
         setErrors((prevErrors) => ({
             ...prevErrors,
-            to: !validateEmail(e.target.value),
+            to: !validateEmails(value),
         }));
     };
 
@@ -112,8 +118,8 @@ const Form = () => {
             <label>To (email):</label>
             <input
                 className="input"
-                type="email"
-                placeholder="recipient@mail.com"
+                type="text"
+                placeholder="recipient1@mail.com, recipient2@mail.com"
                 value={to}
                 onChange={onChangeTo}
                 list="toList"
@@ -123,7 +129,7 @@ const Form = () => {
                     <option key={index} value={email} />
                 ))}
             </datalist>
-            {errors.to && <div className="error" id="toError">Please enter a valid email</div>}
+            {errors.to && <div className="error" id="toError">Please enter valid email(s)</div>}
 
             <label>Subject:</label>
             <input
